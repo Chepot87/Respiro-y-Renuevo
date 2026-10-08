@@ -30,9 +30,10 @@ function setLanguage(next) {
   document.querySelectorAll('[data-content-language]').forEach(element => { element.hidden = element.dataset.contentLanguage !== next; });
   document.querySelectorAll('[data-language]').forEach(button => { button.setAttribute('aria-pressed', String(button.dataset.language === next)); });
   navigation.setAttribute('aria-label', next === 'es' ? 'Navegación principal' : 'Main navigation');
-  document.title = next === 'es' ? 'Experiencias privadas de bienestar | Respiro y Renuevo' : 'Private Wellness Experiences | Respiro y Renuevo';
+  const pageTitle = next === 'es' ? document.body.dataset.titleEs : document.body.dataset.titleEn;
+  document.title = `${pageTitle || 'Respiro y Renuevo'} | Respiro y Renuevo`;
   try { localStorage.setItem('respiro-language', next); } catch { /* Switching works without storage. */ }
 }
 document.querySelectorAll('[data-language]').forEach(button => { button.addEventListener('click', () => setLanguage(button.dataset.language)); });
 try { const saved = localStorage.getItem('respiro-language'); if (copy[saved]) setLanguage(saved); } catch { /* Default to English. */ }
-document.querySelector('form').addEventListener('submit', event => { event.preventDefault(); document.querySelector('.form-status').textContent = copy[language].formNote; });
+document.querySelector('form')?.addEventListener('submit', event => { event.preventDefault(); document.querySelector('.form-status').textContent = copy[language].formNote; });

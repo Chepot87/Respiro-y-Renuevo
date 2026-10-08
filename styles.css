@@ -17,3 +17,28 @@ footer{background:var(--green);color:white;text-align:center;padding:56px 24px 3
 .page-title{font:700 52px/1.2 Seasons,Georgia,serif;letter-spacing:-.025em;margin:0 0 30px}.page-title em{color:var(--accent);font-family:Georgia,serif;font-weight:400}.contact .page-title{font-size:46px}
 @media(max-width:760px){.offering-grid{grid-template-columns:1fr;gap:20px}.page-content{padding-top:52px}.story-section{margin-top:44px}}
 @media(max-width:760px){.page-title{font-size:36px}.contact .page-title{font-size:38px}}
+
+/* Small movements, stable layout, and visible content with or without JavaScript. */
+html{scroll-padding-top:140px}
+.site-header{position:sticky;top:0;z-index:20;transition:box-shadow .25s ease,background-color .25s ease}
+.site-header.is-scrolled{box-shadow:0 6px 24px #062b2726;background-color:#09403af5}
+.button{transition:transform .22s ease,box-shadow .22s ease,filter .22s ease}
+.button>span[aria-hidden]{transition:transform .22s ease}
+.detail-panel{transition:box-shadow .28s ease,border-color .28s ease}
+.footer-social a,.language-switch button,.site-header nav>a{transition:color .2s ease,background-color .2s ease,border-color .2s ease}
+.button:active{transform:translateY(0);box-shadow:none}
+@media(hover:hover) and (pointer:fine){
+  .button:hover{transform:translateY(-2px);box-shadow:0 8px 20px #09403a18}
+  .button:hover>span[aria-hidden]{transform:translate(2px,-2px)}
+  .detail-panel:hover{box-shadow:0 12px 32px #09403a0c;border-color:#b4c9bc}
+}
+@media(max-width:900px){
+  .site-header{position:sticky}
+  .site-header nav{display:flex;visibility:hidden;opacity:0;transform:translateY(-8px);pointer-events:none;max-height:calc(100dvh - 110px);overflow-y:auto;transition:opacity .22s ease,transform .22s ease,visibility 0s .22s}
+  .site-header nav.open{visibility:visible;opacity:1;transform:translateY(0);pointer-events:auto;transition-delay:0s}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .site-header,.button,.button>span[aria-hidden],.detail-panel,.footer-social a,.language-switch button,.site-header nav,.site-header nav>a{transition:none}
+  .button:hover,.button:hover>span[aria-hidden]{transform:none}
+}

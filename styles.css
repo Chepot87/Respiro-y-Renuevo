@@ -19,6 +19,8 @@ footer{background:var(--green);color:white;text-align:center;padding:56px 24px 3
 @media(max-width:760px){.page-title{font-size:36px}.contact .page-title{font-size:38px}}
 
 /* Small movements, stable layout, and visible content with or without JavaScript. */
+.site-header{background-image:url('assets/relieve-header.svg');background-size:cover;background-position:center}
+footer{background-image:url('assets/relieve-footer.svg');background-size:cover;background-position:center}
 html{scroll-padding-top:140px}
 .site-header{position:sticky;top:0;z-index:20;transition:box-shadow .25s ease,background-color .25s ease}
 .site-header.is-scrolled{box-shadow:0 6px 24px #062b2726;background-color:#09403af5}

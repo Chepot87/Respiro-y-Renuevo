@@ -21,6 +21,17 @@ footer{background:var(--green);color:white;text-align:center;padding:56px 24px 3
 /* Small movements, stable layout, and visible content with or without JavaScript. */
 .site-header{background-image:url('assets/relieve-header.svg');background-size:cover;background-position:center}
 footer{background-image:url('assets/relieve-footer.svg');background-size:cover;background-position:center}
+.values-section{max-width:800px;margin:0 auto}
+.founder-section{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.8fr);gap:56px;padding:56px;margin-top:72px;background:var(--cream);border-radius:20px;scroll-margin-top:150px}
+.founder-heading h2{font-size:64px;margin-bottom:12px}
+.founder-name-mark{color:var(--gold)}
+.founder-role{font-size:14px;line-height:1.7;color:var(--muted);margin:0}
+.founder-rule{width:48px;height:2px;background:var(--gold);margin-top:28px}
+.founder-story blockquote{margin:0}
+.founder-story blockquote p{font-size:17px;line-height:1.9;color:var(--green);margin:0 0 22px}
+.founder-story blockquote .founder-belief{font:italic 23px/1.6 Georgia,serif;color:var(--accent);margin-bottom:0}
+.founder-signature{font:italic 20px Georgia,serif;color:var(--green);margin:24px 0 0}
+@media(max-width:760px){.founder-section{grid-template-columns:1fr;gap:28px;padding:32px 24px;margin-top:44px}.founder-heading h2{font-size:52px}.founder-story blockquote p{font-size:16px}.founder-story blockquote .founder-belief{font-size:21px}}
 html{scroll-padding-top:140px}
 .site-header{position:sticky;top:0;z-index:20;transition:box-shadow .25s ease,background-color .25s ease}
 .site-header.is-scrolled{box-shadow:0 6px 24px #062b2726;background-color:#09403af5}
